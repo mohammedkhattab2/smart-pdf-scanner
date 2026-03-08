@@ -51,4 +51,13 @@ abstract class ScannerRepository {
 
   /// Share a PDF document with other apps (WhatsApp, Gmail, Drive, etc.).
   Future<Either<Failure, Unit>> sharePdf(ScannedDocument document);
+  
+  /// Delete a PDF document from storage.
+  Future<Either<Failure, Unit>> deletePdf(ScannedDocument document);
+  
+  /// Pick an image from the device gallery.
+  ///
+  /// Returns the selected image file path on success.
+  /// Returns null if user cancels the selection.
+  Future<Either<Failure, String?>> pickImageFromGallery();
 }

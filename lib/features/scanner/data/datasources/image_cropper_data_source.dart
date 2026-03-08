@@ -23,39 +23,51 @@ class ImageCropperDataSourceImpl implements ImageCropperDataSource {
 
   @override
   Future<String> cropImage(String imagePath) async {
-    final file = File(imagePath);
-    if (!await file.exists()) {
-      throw Exception('Image file does not exist at path: $imagePath');
-    }
+    try {
+      final file = File(imagePath);
+      if (!await file.exists()) {
+        throw Exception('Image file does not exist at path: $imagePath');
+      }
 
-    final CroppedFile? cropped = await _cropper.cropImage(
-      sourcePath: imagePath,
-      compressFormat: ImageCompressFormat.jpg,
-      uiSettings: [
-        AndroidUiSettings(
-          toolbarTitle: 'Crop Document',
-          toolbarColor: const Color(0xFF6200EE),
-          toolbarWidgetColor: const Color(0xFFFFFFFF),
-          hideBottomControls: false,
-          lockAspectRatio: false,
-        ),
-        IOSUiSettings(
-          title: 'Crop Document',
-        ),
-      ],
-    );
-
-    if (cropped == null) {
-      throw Exception('Image cropping was cancelled or failed.');
-    }
-
-    final croppedFile = File(cropped.path);
-    if (!await croppedFile.exists()) {
-      throw Exception(
-        'Cropped image file does not exist at path: ${cropped.path}',
+      final CroppedFile? cropped = await _cropper.cropImage(
+        sourcePath: imagePath,
+        compressFormat: ImageCompressFormat.jpg,
+        compressQuality: 90,
+        uiSettings: [
+          AndroidUiSettings(
+            toolbarTitle: 'Crop Document',
+            toolbarColor: const Color(0xFF6200EE),
+            toolbarWidgetColor: const Color(0xFFFFFFFF),
+            hideBottomControls: false,
+            lockAspectRatio: false,
+            initAspectRatio: CropAspectRatioPreset.original,
+            cropStyle: CropStyle.rectangle,
+          ),
+          IOSUiSettings(
+            title: 'Crop Document',
+            minimumAspectRatio: 0.5,
+            aspectRatioLockEnabled: false,
+            resetAspectRatioEnabled: true,
+          ),
+        ],
       );
-    }
 
-    return cropped.path;
+      if (cropped == null) {
+        // User cancelled the cropping
+        return imagePath; // Return original image path if cancelled
+      }
+
+      final croppedFile = File(cropped.path);
+      if (!await croppedFile.exists()) {
+        throw Exception(
+          'Cropped image file does not exist at path: ${cropped.path}',
+        );
+      }
+
+      return cropped.path;
+    } catch (e) {
+      // Re-throw to be handled by the repository
+      rethrow;
+    }
   }
 }

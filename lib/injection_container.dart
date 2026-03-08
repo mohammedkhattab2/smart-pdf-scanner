@@ -1,7 +1,8 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'core/usecases/usecase.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 import 'features/scanner/data/datasources/camera_data_source.dart';
+import 'features/scanner/data/datasources/gallery_data_source.dart';
 import 'features/scanner/data/datasources/image_cropper_data_source.dart';
 import 'features/scanner/data/datasources/local_pdf_storage_data_source.dart';
 import 'features/scanner/data/datasources/pdf_generator_data_source.dart';
@@ -14,11 +15,20 @@ import 'features/scanner/domain/usecases/crop_document_image_usecase.dart';
 import 'features/scanner/domain/usecases/generate_pdf_from_image_usecase.dart';
 import 'features/scanner/domain/usecases/get_saved_pdfs_usecase.dart';
 import 'features/scanner/domain/usecases/open_pdf_usecase.dart';
+import 'features/scanner/domain/usecases/pick_image_from_gallery_usecase.dart';
 import 'features/scanner/domain/usecases/save_pdf_usecase.dart';
 import 'features/scanner/domain/usecases/share_pdf_usecase.dart';
+import 'features/scanner/domain/usecases/delete_pdf_usecase.dart';
 import 'features/scanner/presentation/cubit/pdf_generation_cubit.dart';
 import 'features/scanner/presentation/cubit/pdf_list_cubit.dart';
 import 'features/scanner/presentation/cubit/scanner_cubit.dart';
+import 'features/settings/data/datasources/settings_local_data_source.dart';
+import 'features/settings/data/repositories/settings_repository_impl.dart';
+import 'features/settings/domain/repositories/settings_repository.dart';
+import 'features/settings/domain/usecases/get_settings_usecase.dart';
+import 'features/settings/domain/usecases/save_settings_usecase.dart';
+import 'features/settings/presentation/cubit/settings_cubit.dart';
+import 'features/settings/presentation/cubit/app_theme_cubit.dart';
 
 /// Very simple manual service locator.
 ///
@@ -63,12 +73,20 @@ T sl<T>() => ServiceLocator.instance.get<T>();
 /// This function is called from `main()` before `runApp`.
 Future<void> init() async {
   final locator = ServiceLocator.instance;
+  
+  // External dependencies
+  final sharedPreferences = await SharedPreferences.getInstance();
+  locator.registerLazySingleton(() => sharedPreferences);
 
   // ================
   // Data sources
   // ================
   locator.registerLazySingleton<CameraDataSource>(
     () => CameraDataSourceImpl(),
+  );
+  
+  locator.registerLazySingleton<GalleryDataSource>(
+    () => GalleryDataSourceImpl(),
   );
 
   locator.registerLazySingleton<ImageCropperDataSource>(
@@ -90,6 +108,13 @@ Future<void> init() async {
   locator.registerLazySingleton<PdfSharingDataSource>(
     () => PdfSharingDataSourceImpl(),
   );
+  
+  // Settings data sources
+  locator.registerLazySingleton<SettingsLocalDataSource>(
+    () => SettingsLocalDataSourceImpl(
+      sharedPreferences: locator.get(),
+    ),
+  );
 
   // ================
   // Repositories
@@ -97,11 +122,18 @@ Future<void> init() async {
   locator.registerLazySingleton<ScannerRepository>(
     () => ScannerRepositoryImpl(
       cameraDataSource: locator.get<CameraDataSource>(),
+      galleryDataSource: locator.get<GalleryDataSource>(),
       imageCropperDataSource: locator.get<ImageCropperDataSource>(),
       pdfGeneratorDataSource: locator.get<PdfGeneratorDataSource>(),
       localPdfStorageDataSource: locator.get<LocalPdfStorageDataSource>(),
       pdfOpenerDataSource: locator.get<PdfOpenerDataSource>(),
       pdfSharingDataSource: locator.get<PdfSharingDataSource>(),
+    ),
+  );
+  
+  locator.registerLazySingleton<SettingsRepository>(
+    () => SettingsRepositoryImpl(
+      localDataSource: locator.get<SettingsLocalDataSource>(),
     ),
   );
 
@@ -135,6 +167,23 @@ Future<void> init() async {
   locator.registerLazySingleton<SharePdfUseCase>(
     () => SharePdfUseCase(locator.get<ScannerRepository>()),
   );
+  
+  locator.registerLazySingleton<DeletePdfUseCase>(
+    () => DeletePdfUseCase(locator.get<ScannerRepository>()),
+  );
+  
+  locator.registerLazySingleton<PickImageFromGalleryUseCase>(
+    () => PickImageFromGalleryUseCase(locator.get<ScannerRepository>()),
+  );
+  
+  // Settings use cases
+  locator.registerLazySingleton<GetSettingsUseCase>(
+    () => GetSettingsUseCase(locator.get<SettingsRepository>()),
+  );
+  
+  locator.registerLazySingleton<SaveSettingsUseCase>(
+    () => SaveSettingsUseCase(locator.get<SettingsRepository>()),
+  );
 
   // ================
   // Cubits
@@ -159,6 +208,18 @@ Future<void> init() async {
       getSavedPdfsUseCase: locator.get<GetSavedPdfsUseCase>(),
       openPdfUseCase: locator.get<OpenPdfUseCase>(),
       sharePdfUseCase: locator.get<SharePdfUseCase>(),
+      deletePdfUseCase: locator.get<DeletePdfUseCase>(),
     ),
+  );
+  
+  locator.registerFactory<SettingsCubit>(
+    () => SettingsCubit(
+      getSettings: locator.get<GetSettingsUseCase>(),
+      saveSettings: locator.get<SaveSettingsUseCase>(),
+    ),
+  );
+  
+  locator.registerFactory<AppThemeCubit>(
+    () => AppThemeCubit(),
   );
 }

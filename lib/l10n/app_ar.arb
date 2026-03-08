@@ -1,0 +1,462 @@
+{
+  "@@locale": "ar",
+  "appTitle": "ماسح PDF الذكي",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  
+  "scanDocument": "مسح مستند",
+  "@scanDocument": {
+    "description": "Button text to scan a new document"
+  },
+  
+  "fromCamera": "من الكاميرا",
+  "@fromCamera": {
+    "description": "Option to capture from camera"
+  },
+  
+  "fromGallery": "من المعرض",
+  "@fromGallery": {
+    "description": "Option to pick from gallery"
+  },
+  
+  "recentScans": "المسح الضوئي الأخير",
+  "@recentScans": {
+    "description": "Header for recent scans section"
+  },
+  
+  "noScansYet": "لا توجد مستندات ممسوحة بعد",
+  "@noScansYet": {
+    "description": "Message shown when no scans exist"
+  },
+  
+  "startScanning": "ابدأ المسح الضوئي لرؤية مستنداتك هنا",
+  "@startScanning": {
+    "description": "Subtitle when no scans exist"
+  },
+  
+  "delete": "حذف",
+  "@delete": {
+    "description": "Delete action"
+  },
+  
+  "share": "مشاركة",
+  "@share": {
+    "description": "Share action"
+  },
+  
+  "open": "فتح",
+  "@open": {
+    "description": "Open action"
+  },
+  
+  "cancel": "إلغاء",
+  "@cancel": {
+    "description": "Cancel action"
+  },
+  
+  "save": "حفظ",
+  "@save": {
+    "description": "Save action"
+  },
+  
+  "settings": "الإعدادات",
+  "@settings": {
+    "description": "Settings page title"
+  },
+  
+  "language": "اللغة",
+  "@language": {
+    "description": "Language setting"
+  },
+  
+  "theme": "المظهر",
+  "@theme": {
+    "description": "Theme setting"
+  },
+  
+  "lightTheme": "فاتح",
+  "@lightTheme": {
+    "description": "Light theme option"
+  },
+  
+  "darkTheme": "داكن",
+  "@darkTheme": {
+    "description": "Dark theme option"
+  },
+  
+  "systemTheme": "النظام",
+  "@systemTheme": {
+    "description": "System theme option"
+  },
+  
+  "pdfQuality": "جودة PDF",
+  "@pdfQuality": {
+    "description": "PDF quality setting"
+  },
+  
+  "low": "منخفضة",
+  "@low": {
+    "description": "Low quality option"
+  },
+  
+  "medium": "متوسطة",
+  "@medium": {
+    "description": "Medium quality option"
+  },
+  
+  "high": "عالية",
+  "@high": {
+    "description": "High quality option"
+  },
+  
+  "defaultSavePath": "مسار الحفظ الافتراضي",
+  "@defaultSavePath": {
+    "description": "Default save path setting"
+  },
+  
+  "selectFolder": "اختر مجلد",
+  "@selectFolder": {
+    "description": "Select folder button"
+  },
+  
+  "autoEnhance": "تحسين الصور تلقائياً",
+  "@autoEnhance": {
+    "description": "Auto enhance setting"
+  },
+  
+  "appVersion": "إصدار التطبيق",
+  "@appVersion": {
+    "description": "App version label"
+  },
+  
+  "about": "حول",
+  "@about": {
+    "description": "About section"
+  },
+  
+  "privacyPolicy": "سياسة الخصوصية",
+  "@privacyPolicy": {
+    "description": "Privacy policy link"
+  },
+  
+  "termsOfService": "شروط الخدمة",
+  "@termsOfService": {
+    "description": "Terms of service link"
+  },
+  
+  "rateApp": "تقييم التطبيق",
+  "@rateApp": {
+    "description": "Rate app link"
+  },
+  
+  "shareApp": "مشاركة التطبيق",
+  "@shareApp": {
+    "description": "Share app link"
+  },
+  
+  "contactSupport": "اتصل بالدعم",
+  "@contactSupport": {
+    "description": "Contact support link"
+  },
+  
+  "crop": "قص",
+  "@crop": {
+    "description": "Crop action"
+  },
+  
+  "rotate": "تدوير",
+  "@rotate": {
+    "description": "Rotate action"
+  },
+  
+  "enhance": "تحسين",
+  "@enhance": {
+    "description": "Enhance action"
+  },
+  
+  "fileName": "اسم الملف",
+  "@fileName": {
+    "description": "File name field label"
+  },
+  
+  "enterFileName": "أدخل اسم الملف",
+  "@enterFileName": {
+    "description": "File name field hint"
+  },
+  
+  "processing": "جاري المعالجة...",
+  "@processing": {
+    "description": "Processing message"
+  },
+  
+  "generatingPdf": "جاري إنشاء PDF...",
+  "@generatingPdf": {
+    "description": "Generating PDF message"
+  },
+  
+  "savingPdf": "جاري حفظ PDF...",
+  "@savingPdf": {
+    "description": "Saving PDF message"
+  },
+  
+  "success": "نجح",
+  "@success": {
+    "description": "Success message"
+  },
+  
+  "error": "خطأ",
+  "@error": {
+    "description": "Error message"
+  },
+  
+  "warning": "تحذير",
+  "@warning": {
+    "description": "Warning message"
+  },
+  
+  "info": "معلومات",
+  "@info": {
+    "description": "Info message"
+  },
+  
+  "confirmDelete": "تأكيد الحذف",
+  "@confirmDelete": {
+    "description": "Delete confirmation title"
+  },
+  
+  "deleteMessage": "هل أنت متأكد من رغبتك في حذف هذا الملف؟",
+  "@deleteMessage": {
+    "description": "Delete confirmation message"
+  },
+  
+  "yes": "نعم",
+  "@yes": {
+    "description": "Yes option"
+  },
+  
+  "no": "لا",
+  "@no": {
+    "description": "No option"
+  },
+  
+  "permissionRequired": "مطلوب إذن",
+  "@permissionRequired": {
+    "description": "Permission required title"
+  },
+  
+  "cameraPermissionMessage": "مطلوب إذن الكاميرا لمسح المستندات",
+  "@cameraPermissionMessage": {
+    "description": "Camera permission message"
+  },
+  
+  "storagePermissionMessage": "مطلوب إذن التخزين لحفظ المستندات",
+  "@storagePermissionMessage": {
+    "description": "Storage permission message"
+  },
+  
+  "galleryPermissionMessage": "مطلوب إذن المعرض لاختيار الصور",
+  "@galleryPermissionMessage": {
+    "description": "Gallery permission message"
+  },
+  
+  "grantPermission": "منح الإذن",
+  "@grantPermission": {
+    "description": "Grant permission button"
+  },
+  
+  "openSettings": "فتح الإعدادات",
+  "@openSettings": {
+    "description": "Open settings button"
+  },
+  
+  "scanner": "الماسح الضوئي",
+  "@scanner": {
+    "description": "Scanner subtitle"
+  },
+  
+  "premium": "مميز",
+  "@premium": {
+    "description": "Premium badge text"
+  },
+  
+  "noDocumentsYet": "لا توجد مستندات حتى الآن",
+  "@noDocumentsYet": {
+    "description": "Empty state title"
+  },
+  
+  "tapToScan": "اضغط على الزر الذهبي أدناه\nلمسح مستندك الأول",
+  "@tapToScan": {
+    "description": "Empty state subtitle"
+  },
+  
+  "deleteDocument": "حذف المستند؟",
+  "@deleteDocument": {
+    "description": "Delete dialog title"
+  },
+  
+  "deleteDocumentMessage": "لا يمكن التراجع عن هذا الإجراء",
+  "@deleteDocumentMessage": {
+    "description": "Delete dialog message"
+  },
+  
+  "justNow": "الآن",
+  "@justNow": {
+    "description": "Time format - just now"
+  },
+  
+  "minutesAgo": "منذ {count} دقيقة",
+  "@minutesAgo": {
+    "description": "Time format - minutes ago",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  
+  "hoursAgo": "منذ {count} ساعة",
+  "@hoursAgo": {
+    "description": "Time format - hours ago",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  
+  "yesterday": "أمس",
+  "@yesterday": {
+    "description": "Time format - yesterday"
+  },
+  
+  "daysAgo": "منذ {count} يوم",
+  "@daysAgo": {
+    "description": "Time format - days ago",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  
+  "general": "عام",
+  "@general": {
+    "description": "General settings section"
+  },
+  
+  "pdfSettings": "إعدادات PDF",
+  "@pdfSettings": {
+    "description": "PDF settings section"
+  },
+  
+  "autoEnhanceSubtitle": "تحسين جودة الصور تلقائيًا",
+  "@autoEnhanceSubtitle": {
+    "description": "Auto enhance subtitle"
+  },
+  
+  "version": "الإصدار",
+  "@version": {
+    "description": "Version label"
+  },
+  
+  "email": "البريد الإلكتروني",
+  "@email": {
+    "description": "Email label"
+  },
+  
+  "responseTime": "وقت الاستجابة",
+  "@responseTime": {
+    "description": "Response time label"
+  },
+  
+  "within24Hours": "خلال 24 ساعة",
+  "@within24Hours": {
+    "description": "Response time description"
+  },
+  
+  "sendQuickMessage": "أرسل رسالة سريعة",
+  "@sendQuickMessage": {
+    "description": "Quick message section title"
+  },
+  
+  "subject": "الموضوع",
+  "@subject": {
+    "description": "Subject field label"
+  },
+  
+  "enterSubject": "اكتب موضوع رسالتك",
+  "@enterSubject": {
+    "description": "Subject field hint"
+  },
+  
+  "yourMessage": "رسالتك",
+  "@yourMessage": {
+    "description": "Message field label"
+  },
+  
+  "describeIssue": "اشرح المشكلة أو اطرح سؤالك هنا...",
+  "@describeIssue": {
+    "description": "Message field hint"
+  },
+  
+  "sendEmail": "إرسال البريد الإلكتروني",
+  "@sendEmail": {
+    "description": "Send email button"
+  },
+  
+  "faq": "أسئلة شائعة",
+  "@faq": {
+    "description": "FAQ section title"
+  },
+  
+  "faqSavePdf": "كيف أقوم بحفظ ملف PDF؟",
+  "@faqSavePdf": {
+    "description": "FAQ question about saving PDF"
+  },
+  
+  "faqSavePdfAnswer": "بعد التقاط أو استيراد الصورة وتعديلها، اضغط على زر \"حفظ كـ PDF\".",
+  "@faqSavePdfAnswer": {
+    "description": "FAQ answer about saving PDF"
+  },
+  
+  "faqEditPdf": "هل يمكنني تعديل ملفات PDF الموجودة؟",
+  "@faqEditPdf": {
+    "description": "FAQ question about editing PDF"
+  },
+  
+  "faqEditPdfAnswer": "حالياً، التطبيق يدعم إنشاء ملفات PDF جديدة من الصور فقط.",
+  "@faqEditPdfAnswer": {
+    "description": "FAQ answer about editing PDF"
+  },
+  
+  "faqSaveLocation": "أين يتم حفظ ملفات PDF؟",
+  "@faqSaveLocation": {
+    "description": "FAQ question about save location"
+  },
+  
+  "faqSaveLocationAnswer": "يتم حفظ جميع الملفات في مجلد التطبيق الخاص على جهازك.",
+  "@faqSaveLocationAnswer": {
+    "description": "FAQ answer about save location"
+  },
+  
+  "emailCopied": "تم نسخ البريد الإلكتروني",
+  "@emailCopied": {
+    "description": "Email copied message"
+  },
+  
+  "couldNotOpenEmail": "لا يمكن فتح تطبيق البريد الإلكتروني",
+  "@couldNotOpenEmail": {
+    "description": "Error opening email app"
+  },
+  
+  "fillAllFields": "يرجى ملء جميع الحقول",
+  "@fillAllFields": {
+    "description": "Validation message for empty fields"
+  },
+  
+  "weAreHereToHelp": "نحن هنا لمساعدتك! تواصل معنا",
+  "@weAreHereToHelp": {
+    "description": "Support page subtitle"
+  }
+}

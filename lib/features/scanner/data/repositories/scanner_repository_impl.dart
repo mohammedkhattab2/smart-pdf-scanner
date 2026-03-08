@@ -6,6 +6,7 @@ import '../../../../core/errors/failures.dart';
 import '../../domain/entities/scanned_document.dart';
 import '../../domain/repositories/scanner_repository.dart';
 import '../datasources/camera_data_source.dart';
+import '../datasources/gallery_data_source.dart';
 import '../datasources/image_cropper_data_source.dart';
 import '../datasources/local_pdf_storage_data_source.dart';
 import '../datasources/pdf_generator_data_source.dart';
@@ -23,6 +24,7 @@ import '../datasources/pdf_sharing_data_source.dart';
 /// - File sharing
 class ScannerRepositoryImpl implements ScannerRepository {
   final CameraDataSource _cameraDataSource;
+  final GalleryDataSource _galleryDataSource;
   final ImageCropperDataSource _imageCropperDataSource;
   final PdfGeneratorDataSource _pdfGeneratorDataSource;
   final LocalPdfStorageDataSource _localPdfStorageDataSource;
@@ -31,12 +33,14 @@ class ScannerRepositoryImpl implements ScannerRepository {
 
   const ScannerRepositoryImpl({
     required CameraDataSource cameraDataSource,
+    required GalleryDataSource galleryDataSource,
     required ImageCropperDataSource imageCropperDataSource,
     required PdfGeneratorDataSource pdfGeneratorDataSource,
     required LocalPdfStorageDataSource localPdfStorageDataSource,
     required PdfOpenerDataSource pdfOpenerDataSource,
     required PdfSharingDataSource pdfSharingDataSource,
   })  : _cameraDataSource = cameraDataSource,
+        _galleryDataSource = galleryDataSource,
         _imageCropperDataSource = imageCropperDataSource,
         _pdfGeneratorDataSource = pdfGeneratorDataSource,
         _localPdfStorageDataSource = localPdfStorageDataSource,
@@ -48,7 +52,7 @@ class ScannerRepositoryImpl implements ScannerRepository {
     try {
       final path = await _cameraDataSource.captureImage();
       return Right(path);
-    } on Exception catch (e) {
+    } on Exception catch (_) {
       return Left(
         CameraFailure(
           'Failed to capture image. Please check camera permissions.',
@@ -154,6 +158,36 @@ class ScannerRepositoryImpl implements ScannerRepository {
         ShareFailure(
           'Failed to share PDF. Please try again.',
           code: 'pdf_share_error',
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> deletePdf(ScannedDocument document) async {
+    try {
+      await _localPdfStorageDataSource.deletePdf(document.filePath);
+      return const Right(unit);
+    } on Exception catch (_) {
+      return const Left(
+        FileDeleteFailure(
+          'Failed to delete PDF. Please try again.',
+          code: 'pdf_delete_error',
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, String?>> pickImageFromGallery() async {
+    try {
+      final imagePath = await _galleryDataSource.pickImageFromGallery();
+      return Right(imagePath);
+    } on Exception catch (_) {
+      return const Left(
+        CameraFailure(
+          'Failed to pick image from gallery. Please try again.',
+          code: 'gallery_picker_error',
         ),
       );
     }

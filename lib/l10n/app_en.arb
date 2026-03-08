@@ -1,0 +1,462 @@
+{
+  "@@locale": "en",
+  "appTitle": "Smart PDF Scanner",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  
+  "scanDocument": "Scan Document",
+  "@scanDocument": {
+    "description": "Button text to scan a new document"
+  },
+  
+  "fromCamera": "From Camera",
+  "@fromCamera": {
+    "description": "Option to capture from camera"
+  },
+  
+  "fromGallery": "From Gallery",
+  "@fromGallery": {
+    "description": "Option to pick from gallery"
+  },
+  
+  "recentScans": "Recent Scans",
+  "@recentScans": {
+    "description": "Header for recent scans section"
+  },
+  
+  "noScansYet": "No scans yet",
+  "@noScansYet": {
+    "description": "Message shown when no scans exist"
+  },
+  
+  "startScanning": "Start scanning to see your documents here",
+  "@startScanning": {
+    "description": "Subtitle when no scans exist"
+  },
+  
+  "delete": "Delete",
+  "@delete": {
+    "description": "Delete action"
+  },
+  
+  "share": "Share",
+  "@share": {
+    "description": "Share action"
+  },
+  
+  "open": "Open",
+  "@open": {
+    "description": "Open action"
+  },
+  
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel action"
+  },
+  
+  "save": "Save",
+  "@save": {
+    "description": "Save action"
+  },
+  
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings page title"
+  },
+  
+  "language": "Language",
+  "@language": {
+    "description": "Language setting"
+  },
+  
+  "theme": "Theme",
+  "@theme": {
+    "description": "Theme setting"
+  },
+  
+  "lightTheme": "Light",
+  "@lightTheme": {
+    "description": "Light theme option"
+  },
+  
+  "darkTheme": "Dark",
+  "@darkTheme": {
+    "description": "Dark theme option"
+  },
+  
+  "systemTheme": "System",
+  "@systemTheme": {
+    "description": "System theme option"
+  },
+  
+  "pdfQuality": "PDF Quality",
+  "@pdfQuality": {
+    "description": "PDF quality setting"
+  },
+  
+  "low": "Low",
+  "@low": {
+    "description": "Low quality option"
+  },
+  
+  "medium": "Medium",
+  "@medium": {
+    "description": "Medium quality option"
+  },
+  
+  "high": "High",
+  "@high": {
+    "description": "High quality option"
+  },
+  
+  "defaultSavePath": "Default Save Path",
+  "@defaultSavePath": {
+    "description": "Default save path setting"
+  },
+  
+  "selectFolder": "Select Folder",
+  "@selectFolder": {
+    "description": "Select folder button"
+  },
+  
+  "autoEnhance": "Auto Enhance Images",
+  "@autoEnhance": {
+    "description": "Auto enhance setting"
+  },
+  
+  "appVersion": "App Version",
+  "@appVersion": {
+    "description": "App version label"
+  },
+  
+  "about": "About",
+  "@about": {
+    "description": "About section"
+  },
+  
+  "privacyPolicy": "Privacy Policy",
+  "@privacyPolicy": {
+    "description": "Privacy policy link"
+  },
+  
+  "termsOfService": "Terms of Service",
+  "@termsOfService": {
+    "description": "Terms of service link"
+  },
+  
+  "rateApp": "Rate App",
+  "@rateApp": {
+    "description": "Rate app link"
+  },
+  
+  "shareApp": "Share App",
+  "@shareApp": {
+    "description": "Share app link"
+  },
+  
+  "contactSupport": "Contact Support",
+  "@contactSupport": {
+    "description": "Contact support link"
+  },
+  
+  "crop": "Crop",
+  "@crop": {
+    "description": "Crop action"
+  },
+  
+  "rotate": "Rotate",
+  "@rotate": {
+    "description": "Rotate action"
+  },
+  
+  "enhance": "Enhance",
+  "@enhance": {
+    "description": "Enhance action"
+  },
+  
+  "fileName": "File Name",
+  "@fileName": {
+    "description": "File name field label"
+  },
+  
+  "enterFileName": "Enter file name",
+  "@enterFileName": {
+    "description": "File name field hint"
+  },
+  
+  "processing": "Processing...",
+  "@processing": {
+    "description": "Processing message"
+  },
+  
+  "generatingPdf": "Generating PDF...",
+  "@generatingPdf": {
+    "description": "Generating PDF message"
+  },
+  
+  "savingPdf": "Saving PDF...",
+  "@savingPdf": {
+    "description": "Saving PDF message"
+  },
+  
+  "success": "Success",
+  "@success": {
+    "description": "Success message"
+  },
+  
+  "error": "Error",
+  "@error": {
+    "description": "Error message"
+  },
+  
+  "warning": "Warning",
+  "@warning": {
+    "description": "Warning message"
+  },
+  
+  "info": "Info",
+  "@info": {
+    "description": "Info message"
+  },
+  
+  "confirmDelete": "Confirm Delete",
+  "@confirmDelete": {
+    "description": "Delete confirmation title"
+  },
+  
+  "deleteMessage": "Are you sure you want to delete this PDF?",
+  "@deleteMessage": {
+    "description": "Delete confirmation message"
+  },
+  
+  "yes": "Yes",
+  "@yes": {
+    "description": "Yes option"
+  },
+  
+  "no": "No",
+  "@no": {
+    "description": "No option"
+  },
+  
+  "permissionRequired": "Permission Required",
+  "@permissionRequired": {
+    "description": "Permission required title"
+  },
+  
+  "cameraPermissionMessage": "Camera permission is required to scan documents",
+  "@cameraPermissionMessage": {
+    "description": "Camera permission message"
+  },
+  
+  "storagePermissionMessage": "Storage permission is required to save documents",
+  "@storagePermissionMessage": {
+    "description": "Storage permission message"
+  },
+  
+  "galleryPermissionMessage": "Gallery permission is required to pick images",
+  "@galleryPermissionMessage": {
+    "description": "Gallery permission message"
+  },
+  
+  "grantPermission": "Grant Permission",
+  "@grantPermission": {
+    "description": "Grant permission button"
+  },
+  
+  "openSettings": "Open Settings",
+  "@openSettings": {
+    "description": "Open settings button"
+  },
+  
+  "scanner": "Scanner",
+  "@scanner": {
+    "description": "Scanner subtitle"
+  },
+  
+  "premium": "PREMIUM",
+  "@premium": {
+    "description": "Premium badge text"
+  },
+  
+  "noDocumentsYet": "No Documents Yet",
+  "@noDocumentsYet": {
+    "description": "Empty state title"
+  },
+  
+  "tapToScan": "Tap the golden button below to\nscan your first document",
+  "@tapToScan": {
+    "description": "Empty state subtitle"
+  },
+  
+  "deleteDocument": "Delete Document?",
+  "@deleteDocument": {
+    "description": "Delete dialog title"
+  },
+  
+  "deleteDocumentMessage": "This action cannot be undone",
+  "@deleteDocumentMessage": {
+    "description": "Delete dialog message"
+  },
+  
+  "justNow": "Just now",
+  "@justNow": {
+    "description": "Time format - just now"
+  },
+  
+  "minutesAgo": "{count} minutes ago",
+  "@minutesAgo": {
+    "description": "Time format - minutes ago",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  
+  "hoursAgo": "{count} hours ago",
+  "@hoursAgo": {
+    "description": "Time format - hours ago",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  
+  "yesterday": "Yesterday",
+  "@yesterday": {
+    "description": "Time format - yesterday"
+  },
+  
+  "daysAgo": "{count} days ago",
+  "@daysAgo": {
+    "description": "Time format - days ago",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  
+  "general": "General",
+  "@general": {
+    "description": "General settings section"
+  },
+  
+  "pdfSettings": "PDF Settings",
+  "@pdfSettings": {
+    "description": "PDF settings section"
+  },
+  
+  "autoEnhanceSubtitle": "Automatically improve image quality",
+  "@autoEnhanceSubtitle": {
+    "description": "Auto enhance subtitle"
+  },
+  
+  "version": "Version",
+  "@version": {
+    "description": "Version label"
+  },
+  
+  "email": "Email",
+  "@email": {
+    "description": "Email label"
+  },
+  
+  "responseTime": "Response Time",
+  "@responseTime": {
+    "description": "Response time label"
+  },
+  
+  "within24Hours": "Within 24 hours",
+  "@within24Hours": {
+    "description": "Response time description"
+  },
+  
+  "sendQuickMessage": "Send a Quick Message",
+  "@sendQuickMessage": {
+    "description": "Quick message section title"
+  },
+  
+  "subject": "Subject",
+  "@subject": {
+    "description": "Subject field label"
+  },
+  
+  "enterSubject": "Enter message subject",
+  "@enterSubject": {
+    "description": "Subject field hint"
+  },
+  
+  "yourMessage": "Your Message",
+  "@yourMessage": {
+    "description": "Message field label"
+  },
+  
+  "describeIssue": "Describe your issue or ask your question here...",
+  "@describeIssue": {
+    "description": "Message field hint"
+  },
+  
+  "sendEmail": "Send Email",
+  "@sendEmail": {
+    "description": "Send email button"
+  },
+  
+  "faq": "Frequently Asked Questions",
+  "@faq": {
+    "description": "FAQ section title"
+  },
+  
+  "faqSavePdf": "How do I save a PDF file?",
+  "@faqSavePdf": {
+    "description": "FAQ question about saving PDF"
+  },
+  
+  "faqSavePdfAnswer": "After capturing or importing an image and editing it, tap the \"Save as PDF\" button.",
+  "@faqSavePdfAnswer": {
+    "description": "FAQ answer about saving PDF"
+  },
+  
+  "faqEditPdf": "Can I edit existing PDF files?",
+  "@faqEditPdf": {
+    "description": "FAQ question about editing PDF"
+  },
+  
+  "faqEditPdfAnswer": "Currently, the app only supports creating new PDF files from images.",
+  "@faqEditPdfAnswer": {
+    "description": "FAQ answer about editing PDF"
+  },
+  
+  "faqSaveLocation": "Where are PDF files saved?",
+  "@faqSaveLocation": {
+    "description": "FAQ question about save location"
+  },
+  
+  "faqSaveLocationAnswer": "All files are saved in the app's private folder on your device.",
+  "@faqSaveLocationAnswer": {
+    "description": "FAQ answer about save location"
+  },
+  
+  "emailCopied": "Email copied to clipboard",
+  "@emailCopied": {
+    "description": "Email copied message"
+  },
+  
+  "couldNotOpenEmail": "Could not open email app",
+  "@couldNotOpenEmail": {
+    "description": "Error opening email app"
+  },
+  
+  "fillAllFields": "Please fill all fields",
+  "@fillAllFields": {
+    "description": "Validation message for empty fields"
+  },
+  
+  "weAreHereToHelp": "We're here to help! Get in touch",
+  "@weAreHereToHelp": {
+    "description": "Support page subtitle"
+  }
+}

@@ -22,6 +22,9 @@ abstract class LocalPdfStorageDataSource {
 
   /// Get all stored PDFs as [ScannedDocumentModel]s.
   Future<List<ScannedDocumentModel>> getSavedPdfs();
+  
+  /// Delete a PDF file from storage.
+  Future<void> deletePdf(String filePath);
 }
 
 class LocalPdfStorageDataSourceImpl implements LocalPdfStorageDataSource {
@@ -78,5 +81,13 @@ class LocalPdfStorageDataSourceImpl implements LocalPdfStorageDataSource {
     models.sort((a, b) => b.createdAt.compareTo(a.createdAt));
 
     return models;
+  }
+  
+  @override
+  Future<void> deletePdf(String filePath) async {
+    final file = File(filePath);
+    if (await file.exists()) {
+      await file.delete();
+    }
   }
 }
